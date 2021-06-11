@@ -3,6 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  apiUrl: 'https://tbc.murlocmate.com',
+  apiKey: 'q4UWuQm7.eNFT9CeeYcCLNsV4wCo4CCoX1fXBEAek',
   production: false
 };
 

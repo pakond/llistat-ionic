@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      llistat amb API Rest
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,33 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">llistat amb API Rest</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div id="container" style="background-color: black; margin: 2%;">
+    <ion-list lines="full" inset="true">
+      <ion-list-header style="background-color: red;">
+        <ion-label color="primary">
+          <h1>Razas</h1>
+        </ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let race of races">
+        <ion-grid>
+          <ion-row style="background-color: black !important;">
+            <ion-col size="3">
+              <ion-label color="success">ID: {{ race.id }}</ion-label>
+            </ion-col>
+            <ion-col size="5">
+              <ion-label color="danger" class="ion-text-center">{{ race.name }}</ion-label>
+            </ion-col>
+            <ion-col size="4">
+              <ion-label color="warning" *ngIf="race.faction === 1">Horda</ion-label>
+              <ion-label color="warning" *ngIf="race.faction === 2">Alianza</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
   </div>
 </ion-content>
